@@ -52,11 +52,20 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_right_when_have_strike_and_10th_is_strike() {
+    void should_return_when_have_one_more_strike() {
         BowlingGame bowlingGame = new BowlingGame();
         int[] numberOfDown = {1, 2, 10, 1, 2, 10, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 4, 5};
         int result = bowlingGame.countSource(numberOfDown);
         int expect = 71;
+        assertEquals(expect, result);
+    }
+
+    @Test
+    void should_return_when_have_strike_and_10th_is_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 2, 10, 1, 2, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 10, 4, 5};
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 69;
         assertEquals(expect, result);
     }
 }
