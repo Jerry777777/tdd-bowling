@@ -68,4 +68,13 @@ public class BowlingGameTest {
         int expect = 69;
         assertEquals(expect, result);
     }
+
+    @Test
+    void should_return_when_have_strike_and_spare_but_not_in_10th() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 2, 10, 5, 5, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 3, 4};
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 74;
+        assertEquals(expect, result);
+    }
 }
