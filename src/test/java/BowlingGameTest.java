@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BowlingGameTest {
@@ -10,6 +12,15 @@ public class BowlingGameTest {
         int[] numberOfDown = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         int result = bowlingGame.countSource(numberOfDown);
         int expect = 0;
+        assertEquals(expect, result);
+    }
+
+    @Test
+    void should_return_sum_source_when_no_strike_or_spare() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 3, 4, 5, 5, 2, 1, 2, 4, 2, 3, 6, 4, 1, 2, 5, 3, 4, 2, 6};
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = Arrays.stream(numberOfDown).sum();
         assertEquals(expect, result);
     }
 }
