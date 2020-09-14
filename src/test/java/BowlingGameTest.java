@@ -32,4 +32,13 @@ public class BowlingGameTest {
         int expect = 51;
         assertEquals(expect, result);
     }
+
+    @Test
+    void should_return_one_round_have_spare_and_10th_have_spare_but_no_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {1, 2, 5, 5, 1, 2, 3, 2, 4, 3, 2, 3, 1, 3, 2, 1, 3, 4, 7, 3, 1};
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 59;
+        assertEquals(expect, result);
+    }
 }
