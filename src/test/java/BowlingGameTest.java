@@ -86,4 +86,13 @@ public class BowlingGameTest {
         int expect = 82;
         assertEquals(expect, result);
     }
+
+    @Test
+    void should_return_when_all_rounds_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfDown = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
+        int result = bowlingGame.countSource(numberOfDown);
+        int expect = 300;
+        assertEquals(expect, result);
+    }
 }
